@@ -1,0 +1,54 @@
+<app-navbar pageName="Create Issue"></app-navbar>
+<div class="container-fluid w-75 p-4">
+  <form>
+    <div class="mb-3">
+      <label for="title" class="form-label">Issue title</label>
+      <input
+        type="text"
+        class="form-control"
+        name="title"
+        id="title"
+        placeholder="Your issue in short"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Issue description</label>
+      <textarea
+        class="form-control"
+        title="description"
+        id="description"
+        placeholder="Describe your issue"
+        rows="5"
+      ></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="section" class="form-label">Issue section</label>
+      <input
+        type="text"
+        class="form-control"
+        name="section"
+        id="section"
+        placeholder="Section"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="images" class="form-label">Select images</label>
+      <input
+        class="form-control"
+        type="file"
+        name="images"
+        id="images"
+        accept="image/png, image/jpeg, image/jpg"
+        multiple
+      />
+    </div>
+    <div class="mb-3">
+      <label for="scope" class="form-label">Issue scope</label>
+      <select class="form-select" id="scope" name="scope">
+        <option value="department" selected>DEPARTMENT</option>
+        <option value="organization">ORGANIZATION</option>
+      </select>
+    </div>
+    <input type="submit" class="btn btn-secondary" value="Submit" />
+  </form>
+</div>
