@@ -1,0 +1,9 @@
+.issue-img img {
+  object-fit: cover;
+  overflow: hidden;
+  height: 200px;
+}
+
+button {
+  border: 1px solid #adb5bd;
+}

@@ -1,0 +1,28 @@
+<div class="card w-25 m-auto mt-5 text-center p-2" style="width: 18rem">
+  <div class="card-body">
+    <h5 class="card-title fs-3 mb-4">Log In</h5>
+    <form class="" (ngSubmit)="onSubmit($event)">
+      <div class="mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="userId"
+          name="userId"
+          [(ngModel)]="userId"
+          placeholder="Enter your user Id"
+        />
+      </div>
+      <div class="mb-3">
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          [(ngModel)]="password"
+          placeholder="Enter your password"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary w-100 mb-3">Log In</button>
+    </form>
+  </div>
+</div>

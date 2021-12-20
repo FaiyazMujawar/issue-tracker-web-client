@@ -1,0 +1,18 @@
+<nav class="navbar navbar-dark py-3">
+  <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="['/']">
+      <img
+        src="https://img.icons8.com/fluency/64/000000/important-book.png"
+        alt=""
+        width="30"
+        height="24"
+        class="d-inline-block align-text-top"
+      />
+      <span class="fs-3"> Grievance Portal </span>
+      &#8212;
+      <span class="fs-5">
+        {{ pageName && pageName }}
+      </span>
+    </a>
+  </div>
+</nav>

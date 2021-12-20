@@ -1,0 +1,45 @@
+<div class="mb-3">
+  <div class="card position-relative">
+    <div class="position-absolute top-0 end-0 p-3">
+      <button class="btn rounded-pill">
+        <i class="far fa-heart"></i>
+      </button>
+    </div>
+    <div class="issue-img" [routerLink]="['/issues', issue._id]">
+      <!-- TODO: change this index -->
+      <img
+        src="{{ issue.images[-1] ?? '/assets/images/placeholder-image.png' }}"
+        class="card-img-top"
+        alt="issue-image"
+      />
+    </div>
+    <div class="card-body">
+      <div class="card-title fs-5" [routerLink]="['/issues', issue._id]">
+        {{
+          issue.title.length < 150
+            ? issue.title
+            : issue.title.substring(0, 150).trim() + "..."
+        }}
+      </div>
+      <div
+        class="card-text text-muted mb-2"
+        [routerLink]="['/issue', issue._id]"
+      >
+        {{
+          issue.description.length < 400
+            ? issue.description
+            : issue.description.substring(0, 400).trim() + "..."
+        }}
+      </div>
+      <hr />
+      <div class="input-group mt-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Share your thoughts..."
+        />
+        <button class="btn btn-secondary" type="button">Post</button>
+      </div>
+    </div>
+  </div>
+</div>
