@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import Issues from '../scratchpad/issues.json';
+import Issues from '../../scratchpad/issues.json';
 
 export interface Issue {
   description: string;
