@@ -15,6 +15,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { CommentComponent } from './components/comment/comment.component';
 import { SolutionComponent } from './components/solution/solution.component';
 import { CreateIssueComponent } from './components/create-issue/create-issue.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { CreateIssueComponent } from './components/create-issue/create-issue.com
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

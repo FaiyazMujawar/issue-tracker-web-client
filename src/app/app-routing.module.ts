@@ -4,6 +4,7 @@ import { CreateIssueComponent } from './components/create-issue/create-issue.com
 import { HomeComponent } from './components/home/home.component';
 import { IssueComponent } from './components/issue/issue.component';
 import { LoginComponent } from './components/login/login.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -13,14 +14,17 @@ const routes: Routes = [
   {
     path: 'issues/create',
     component: CreateIssueComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'issues/:issueId',
     component: IssueComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: '',
     component: HomeComponent,
+    canActivate: [AuthGuard],
   },
 ];
 
