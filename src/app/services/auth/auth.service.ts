@@ -38,7 +38,7 @@ export class AuthService {
     localStorage.setItem(this.REFRESH_TOKEN_KEY, refreshToken);
   }
 
-  private async getAccessToken(): Promise<string | null> {
+  async getAccessToken(): Promise<string | null> {
     const token: string | null = localStorage.getItem(this.ACCESS_TOKEN_KEY);
 
     if (!!token) {
@@ -70,7 +70,9 @@ export class AuthService {
         {
           observe: 'response',
           headers: {
-            Authorization: localStorage.getItem(this.ACCESS_TOKEN_KEY)!,
+            Authorization: `Bearer ${localStorage.getItem(
+              this.ACCESS_TOKEN_KEY
+            )!}`,
           },
         }
       )
@@ -81,6 +83,8 @@ export class AuthService {
     if (response.status !== 200) {
       throw new Error(body.message);
     }
+
+    localStorage.setItem(this.ACCESS_TOKEN_KEY, body.token);
 
     return body.token;
   }

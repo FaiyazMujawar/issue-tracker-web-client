@@ -6,9 +6,8 @@
       </button>
     </div>
     <div class="issue-img" [routerLink]="['/issues', issue._id]">
-      <!-- TODO: change this index -->
       <img
-        src="{{ issue.images[-1] ?? '/assets/images/placeholder-image.png' }}"
+        src="{{ issue.images[0] ?? '/assets/images/placeholder-image.png' }}"
         class="card-img-top"
         alt="issue-image"
       />
@@ -23,7 +22,7 @@
       </div>
       <div
         class="card-text text-muted mb-2"
-        [routerLink]="['/issue', issue._id]"
+        [routerLink]="['/issues', issue._id]"
       >
         {{
           issue.description.length < 400

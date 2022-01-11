@@ -13,7 +13,12 @@ export class IssuesComponent implements OnInit {
 
   ngOnInit(): void {
     this.issueService
-      .getAllIssues('CSE')
-      .subscribe((issues) => (this.issues = issues));
+      .getAllIssues()
+      .then((data) => {
+        this.issues = data.issues;
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }
 }
