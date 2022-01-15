@@ -119,4 +119,29 @@ export class IssuesService {
 
     return body.data;
   }
+
+  async postComment(id: string, comment: string): Promise<void> {
+    const token: string = (await this.authService.getAccessToken()) as string;
+
+    const response: HttpResponse<any> = await firstValueFrom(
+      this.http.put<any>(
+        `${ENV.API_SERVER_URI}/issues/${id}/comments`,
+        {
+          comment,
+        },
+        {
+          observe: 'response',
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+    );
+
+    const body: any = response.body;
+
+    if (response.status !== 200) {
+      throw new Error(body.message);
+    }
+  }
 }
