@@ -51,15 +51,10 @@
                 <div class="text-muted">No comments...</div>
               </ng-template>
             </ng-template>
-
-            <div class="input-group">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Post your comment"
-              />
-              <button class="btn btn-secondary" type="button">Post</button>
-            </div>
+            <app-comment-box
+              [issueId]="issue._id"
+              (onCommentPost)="commentPosted($event)"
+            ></app-comment-box>
           </div>
         </div>
 

@@ -16,6 +16,7 @@ import { CommentComponent } from './components/comment/comment.component';
 import { SolutionComponent } from './components/solution/solution.component';
 import { CreateIssueComponent } from './components/create-issue/create-issue.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CommentBoxComponent } from './components/comment-box/comment-box.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
     CommentComponent,
     SolutionComponent,
     CreateIssueComponent,
+    CommentBoxComponent,
   ],
   imports: [
     BrowserModule,

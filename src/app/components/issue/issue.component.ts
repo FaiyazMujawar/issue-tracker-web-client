@@ -60,4 +60,14 @@ export class IssueComponent implements OnInit {
         console.error(error);
       });
   }
+
+  commentPosted(comment: string): void {
+    this.comments.push({
+      comment,
+      postedBy: '',
+      _id: '',
+      postedOn: new Date(),
+      isInappropriate: false,
+    });
+  }
 }
